@@ -14,7 +14,7 @@ public class Kooste implements IOsa{
 	}
 	
 	@Override
-	public float tulosta() {
+	public int tulosta() {
 		int kokonaisHinta = 0;
 		for(IOsa i: laiteosaList) {
 			kokonaisHinta += i.tulosta();
