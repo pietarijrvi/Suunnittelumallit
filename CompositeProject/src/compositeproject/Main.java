@@ -4,42 +4,26 @@ public class Main {
 	
 	 public static void main(String[] args) {
 		 
-		 
-		 IOsa osat;
-		 
-		 
-		 osat = giveOsalista(new DellinTehdas());
-		 System.out.println("Osien hinta yhteensä: " + osat.tulosta() + "\n");
+		 	// Luodaan osat
+		 	IOsa kotelo = new Kotelo();
+	        IOsa emolevy = new Emolevy();
+	        IOsa CPU = new Prosessori();
+	        IOsa RAM = new Muistipiiri();
+	        IOsa WLAN = new Verkkokortti();
+	        IOsa GPU = new Naytonohjain();
 
+	        // Lisätään koppaan emolevy
+	        kotelo.addOsa(emolevy);
+	        
+	        // Lisätään loput osat emolevyyn
+	        emolevy.addOsa(CPU);
+	        emolevy.addOsa(RAM);	        
+	        emolevy.addOsa(GPU);
+	        emolevy.addOsa(WLAN);
+	        
+	        // Tulostetaan kokonaishinta
+	        System.out.println("Hintaa tietokoneella yhteensä: " + kotelo.getHinta());
 		 
-		 osat = giveOsalista(new LenovonTehdas());
-		 System.out.println("Osien hinta yhteensä: " + osat.tulosta());
-		 
-	 }
-	 
-	 private static IOsa giveOsalista(ITehdas newFactory) {
-		 
-		 ITehdas factory = newFactory;
-		 
-		 IOsa osat = factory.getKoostekomponentti();
-		 
-		 IOsa emolevy = factory.getEmolevy();
-		 
-		 emolevy.addOsa(factory.getProsessori());
-		 emolevy.addOsa(factory.getMuistipiiri());
-		 
-		 osat.addOsa(emolevy);
-		 
-		 IOsa kotelo = factory.getKotelo();
-		
-		 kotelo.addOsa(factory.getVirtalahde());
-		 
-		 osat.addOsa(kotelo);
-		 
-		 osat.addOsa(factory.getNaytonohjain());
-		 osat.addOsa(factory.getVerkkokortti());
-		 
-		 return osat;
 	 }
 	
 }
