@@ -4,8 +4,8 @@ public class Main {
 	
 	 public static void main(String[] args) {
 		 
-		 	// Luodaan osat
-		 	IOsa kotelo = new Kotelo();
+		// Luodaan osat
+		IOsa kotelo = new Kotelo();
 	        IOsa emolevy = new Emolevy();
 	        IOsa CPU = new Prosessori();
 	        IOsa RAM = new Muistipiiri();
