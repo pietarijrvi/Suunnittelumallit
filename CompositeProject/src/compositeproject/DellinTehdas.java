@@ -32,6 +32,12 @@ public class DellinTehdas implements ITehdas {
 		IOsa naytonohjain = new Laiteosa("Dellin näytönohjain", 300);
 		return naytonohjain;
 	}
+	
+	@Override
+	public IOsa getVirtalahde() {
+		IOsa virtalahde = new Laiteosa("Dellin virtalahde", 50);
+		return virtalahde;
+	}
 
 	@Override
 	public IOsa getKotelo() {
@@ -46,10 +52,6 @@ public class DellinTehdas implements ITehdas {
 		return koostekomponentti;
 	}
 
-	@Override
-	public IOsa getVirtalahde() {
-		IOsa virtalahde = new Laiteosa("Dellin virtalahde", 50);
-		return virtalahde;
-	}
+
 
 }
