@@ -21,6 +21,6 @@ public class Verkkokortti implements IOsa{
 
 	@Override
 	public void addOsa(IOsa osa) {
-		osat.add(osa);
+		throw new RuntimeException("Et voi lisätä verkkokorttiin uutta osaa");
 	}
 }
