@@ -1,4 +1,5 @@
 
+
 public class AdidasFarmarit implements Farmarit{
 	
 	public String toString() {
