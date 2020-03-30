@@ -1,4 +1,4 @@
 
-public interface Vaate {
+public interface Lippis {
 	public String toString();
 }

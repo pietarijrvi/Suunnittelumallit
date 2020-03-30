@@ -1,4 +1,4 @@
 
-public interface Kengat {
+public interface Tpaita {
 	public String toString();
 }
