@@ -14,7 +14,7 @@ public class DigitalClock implements Observer {
 	}
 	
 	public void draw() {
-		System.out.println("Kello tällä hetkellä: " + this.timer.getHours() + ":" + this.timer.getMinutes() + ":" +this.timer.getSeconds());
+		System.out.printf("Kello tällä hetkellä: %02d:%02d:%02d\n", this.timer.getHours(), this.timer.getMinutes(), this.timer.getSeconds());
 	}
 
 	@Override

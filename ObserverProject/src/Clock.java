@@ -1,11 +1,11 @@
 import java.util.GregorianCalendar;
 import java.util.Observable;
+import java.util.concurrent.TimeUnit;
 
 public class Clock extends Observable implements Runnable {
 
 	private static final Clock timerInstance = new Clock();
 
-	private String time;
 	private int seconds;
 	private int minutes;
 	private int hours;
@@ -33,20 +33,14 @@ public class Clock extends Observable implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			try {
-				Thread.sleep(1000);
-				GregorianCalendar calendario = new GregorianCalendar();
-				hours = calendario.get(GregorianCalendar.HOUR_OF_DAY);
-				minutes = calendario.get(GregorianCalendar.MINUTE);
-				seconds = calendario.get(GregorianCalendar.SECOND);
-				time += ((hours < 10) ? "0" : "") + hours + ":";
-				time += ((minutes < 10) ? "0" : "") + minutes + ":";
-				time += ((seconds < 10) ? "0" : "") + seconds;
+			long millis = System.currentTimeMillis();
+			hours = (int) (TimeUnit.MILLISECONDS.toHours(millis) % 24);
+			minutes = (int) (TimeUnit.MILLISECONDS.toMinutes(millis) % 60);
+			int second = (int) (TimeUnit.MILLISECONDS.toSeconds(millis) % 60);
+			if (second != seconds) {
+				seconds = second;
 				setChanged();
-				notifyObservers(time);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				notifyObservers();
 			}			
 		}
 	}
