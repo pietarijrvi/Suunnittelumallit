@@ -1,4 +1,3 @@
-import java.util.GregorianCalendar;
 import java.util.Observable;
 import java.util.concurrent.TimeUnit;
 
