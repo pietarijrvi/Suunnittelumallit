@@ -1,8 +1,18 @@
+import java.util.Random;
 
 public class Pokemon {
 	
 	private Tila evoluutio;
 	private int pisteet;
+	private int elämä = 20;
+
+	public int getElämä() {
+		return elämä;
+	}
+
+	public void setElämä(int elämä) {
+		this.elämä = elämä;
+	}
 
 	public Pokemon(Tila t) {
 		evoluutio = t;
@@ -31,4 +41,16 @@ public class Pokemon {
 	public int getXP() {
 		return pisteet;
 	}
+	
+	public void otaDmg() {
+		elämä -= randDmg();		
+	}
+	
+	public int randDmg() {
+		Random ran = new Random();
+		int x = ran.nextInt(8) + 0;
+		return x;
+	}
+	
+	
 }
