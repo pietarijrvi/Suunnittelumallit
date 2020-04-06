@@ -4,7 +4,7 @@ public class Pokemon {
 	
 	private Tila evoluutio;
 	private int pisteet;
-	private int elämä = 20;
+	private int elämä = 25;
 
 	public int getElämä() {
 		return elämä;
