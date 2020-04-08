@@ -27,7 +27,8 @@ public class Dice extends Game {
 				}
 			}
 			
-			for (int i = 0; i < super.playersCount; i++) {
+			
+			for (int i = 0; i < super.playersCount; i++) { // Käydään pelaajat läpi
 				if (players[i][0] > diceThrows[0][0]) {
 					diceThrows[0][0] = players[i][0];
 					diceThrows[0][1] = i;
@@ -42,7 +43,7 @@ public class Dice extends Game {
 			} else {
 				System.out.println("\nWinner of round " + round + " is player number " + (diceThrows[0][1] + 1) + " with "
 						+ diceThrows[0][0]);
-				players[diceThrows[0][1]][1]++;
+				players[diceThrows[0][1]][1]++; // Lisätään voitto
 			}
 			
 		}
