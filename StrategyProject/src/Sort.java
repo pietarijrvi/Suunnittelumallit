@@ -9,10 +9,6 @@ public class Sort {
 		this.numbers = numbers;
 	}
 
-	public void setStrategy(SortingStyle style) {
-		this.style = style;
-	}
-
 	public int[] sort() {
 		return this.style.sort(this.numbers);
 	}
