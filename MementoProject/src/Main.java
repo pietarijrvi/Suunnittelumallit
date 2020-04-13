@@ -12,8 +12,8 @@ public class Main {
 	        Object obj = arvuuttaja.liityPeliin();
 	        
 	        while (!endOfGame) {
-	            int guess = Integer.parseInt(scanner.nextLine());
-	            endOfGame = arvuuttaja.tarkistus(obj, guess);
+	            int arvaus = Integer.parseInt(scanner.nextLine());
+	            endOfGame = arvuuttaja.tarkistus(obj, arvaus);
 	        }
 	}
 }
