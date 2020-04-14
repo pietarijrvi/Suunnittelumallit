@@ -17,7 +17,7 @@ public class Arvaaja implements Runnable{
 	}
 	
 	public void arvaa() {
-		int arvaus = new Random().nextInt(10);
+		int arvaus = new Random().nextInt(11);
 		if(!this.numeroLista.contains(arvaus)) {
 			this.numeroLista.add(arvaus);
 			if(!arvuuttaja.tarkistus(obj, arvaus)) {
