@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Arvaaja implements Runnable{
+public class Arvaaja extends Thread{
 	private Arvuuttaja arvuuttaja;
 	private Object obj;
 	List<Integer> numeroLista;
 	
 	public Arvaaja(Arvuuttaja arvuuttaja) {
 		this.arvuuttaja = arvuuttaja;
-		this.numeroLista = new ArrayList();
+		this.numeroLista = new ArrayList<Integer>();
 	}
 	
 	public void liityPeliin() {

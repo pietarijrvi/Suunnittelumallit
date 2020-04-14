@@ -5,7 +5,7 @@ public class Arvuuttaja {
 	private static volatile int laskuri = 0;
 
 	public synchronized Object liityPeliin(Arvaaja arvaaja) {
-		return new Memento(new Random().nextInt(10));
+		return new Memento(new Random().nextInt(11));
 	}
 
 	public synchronized Boolean tarkistus(Object o, int arvaus) {
