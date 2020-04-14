@@ -1,19 +1,15 @@
 
-import java.util.Scanner;
-
 public class Main {
 
 
 	public static void main(String[] args) {
-		  	Scanner scanner = new Scanner(System.in);
-	        boolean endOfGame = false;
-	        
-	        Arvuuttaja arvuuttaja = new Arvuuttaja();
-	        Object obj = arvuuttaja.liityPeliin();
-	        
-	        while (!endOfGame) {
-	            int arvaus = Integer.parseInt(scanner.nextLine());
-	            endOfGame = arvuuttaja.tarkistus(obj, arvaus);
-	        }
+		Arvuuttaja arvuuttaja = new Arvuuttaja();
+		Arvaaja arvaaja1 = new Arvaaja(arvuuttaja);
+		Arvaaja arvaaja2 = new Arvaaja(arvuuttaja);
+		Arvaaja arvaaja3 = new Arvaaja(arvuuttaja);
+		arvaaja1.run();
+		arvaaja2.run();
+		arvaaja3.run();
+
 	}
 }
