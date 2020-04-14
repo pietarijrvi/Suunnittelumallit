@@ -5,11 +5,11 @@ import java.util.Random;
 public class Arvaaja implements Runnable{
 	private Arvuuttaja arvuuttaja;
 	private Object obj;
-	List<Integer> numbers;
+	List<Integer> numeroLista;
 	
 	public Arvaaja(Arvuuttaja arvuuttaja) {
 		this.arvuuttaja = arvuuttaja;
-		this.numbers = new ArrayList();
+		this.numeroLista = new ArrayList();
 	}
 	
 	public void liityPeliin() {
@@ -17,11 +17,11 @@ public class Arvaaja implements Runnable{
 	}
 	
 	public void arvaa() {
-		int guess = new Random().nextInt(10);
-		if(!this.numbers.contains(guess)) {
-			this.numbers.add(guess);
-			if(!arvuuttaja.tarkistus(obj, guess)) {
-				System.out.println("Arvasin väärin.. Arvaukseni oli " + guess);
+		int arvaus = new Random().nextInt(10);
+		if(!this.numeroLista.contains(arvaus)) {
+			this.numeroLista.add(arvaus);
+			if(!arvuuttaja.tarkistus(obj, arvaus)) {
+				System.out.println("Arvasin väärin.. Arvaukseni oli " + arvaus);
 				arvaa();
 			}
 		}
