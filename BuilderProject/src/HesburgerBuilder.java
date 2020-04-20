@@ -1,34 +1,34 @@
 
 public class HesburgerBuilder extends HamppariBuilder {
 
-	private String hampurilainen;
+	private StringBuilder hampurilainen;
 
-	public String getHamppari() {
+	public StringBuilder getHamppari() {
 		return this.hampurilainen;
 	}
 
 	@Override
 	public void createHamppari() {
-		this.hampurilainen = new String();
+		this.hampurilainen = new StringBuilder();
 	}
 
 	@Override
 	public void buildSampyla() {
-		hampurilainen+=("Hesburger Sämpylä\n");
+		hampurilainen.append("Hesburger Sämpylä\n");
 	}
 
 	@Override
 	public void buildPihvi() {
-		hampurilainen+=("Hesburger Pihvi\n");
+		hampurilainen.append("Hesburger Pihvi\n");
 	}
 
 	@Override
 	public void buildSalaatti() {
-		hampurilainen+=("Hesburger Salaatti\n");
+		hampurilainen.append("Hesburger Salaatti\n");
 	}
 
 	@Override
 	public void buildKastike() {
-		hampurilainen+=("Hesburger Kastike\n");
+		hampurilainen.append("Hesburger Kastike\n");
 	}
 }

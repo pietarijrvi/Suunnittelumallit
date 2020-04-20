@@ -11,27 +11,25 @@ public class Main {
 		tilaus.setBuilder(mcBuilder);
 		tilaus.luoHampurilainen();
 	
-		Object hampurilainen = mcBuilder.getHamppari();
 		System.out.println("McDonalds hampurilainen: ");
-		tulostaHamppari(hampurilainen);
+		printHampurilainen(tilaus.getHamppari());
 		
 		tilaus.setBuilder(heseBuilder);
 		tilaus.luoHampurilainen();
 	
-		hampurilainen = heseBuilder.getHamppari();
 		System.out.println("\nHesburger hampurilainen: ");
-		tulostaHamppari(hampurilainen);	
+		printHampurilainen(tilaus.getHamppari());
 		
 
 	}
-
+	
 	@SuppressWarnings("unchecked")
-	private static void tulostaHamppari(Object hampurilainen) {
-		if (hampurilainen instanceof String) {
+	private static void printHampurilainen(Object hampurilainen) {
+		
+		if(hampurilainen instanceof StringBuilder) {
 			System.out.println(hampurilainen);
-		} else if (hampurilainen instanceof ArrayList) {
-			((ArrayList<McTayte>) hampurilainen).forEach(n -> System.out.print(n.getNimi() + "\n"));
+		}else if(hampurilainen instanceof ArrayList) {
+			((ArrayList<McTayte>) hampurilainen).forEach(n -> System.out.print(n.getNimi()+"\n"));
 		}
 	}
-
 }

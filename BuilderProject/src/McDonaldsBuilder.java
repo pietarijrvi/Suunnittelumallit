@@ -4,7 +4,7 @@ public class McDonaldsBuilder extends HamppariBuilder {
 
 	private ArrayList<McTayte> hampurilainen;
 
-	public Object  getHamppari() {
+	public Object getHamppari() {
 		return hampurilainen;
 	}
 
