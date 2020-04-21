@@ -13,6 +13,6 @@ public class RahayksikköAdapterImpl implements RahayksikköAdapter{
 	}
 
 	private double muunnaEurotDollareiksi(double e) {
-		return e*1.08640;
+		return e*1.08260;
 	}
 }
